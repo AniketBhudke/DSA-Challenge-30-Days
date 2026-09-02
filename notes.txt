@@ -1,0 +1,564 @@
+Python Data Types & Important Concepts — Complete Notes
+
+These notes are organized in a simple, exam-friendly format. Each topic has:
+
+Definition → Example → Important functions/methods → Output/Explanation
+
+1. Data Types
+Definition
+
+A data type tells Python what kind of value a variable stores.
+
+Example
+age = 20
+name = "Aniket"
+price = 99.5
+is_student = True
+Value	Data Type
+20	int
+"Aniket"	str
+99.5	float
+True	bool
+
+2. Integer — int
+Definition
+
+int is used to store whole numbers without decimal points.
+
+Example
+age = 20
+
+print(age)
+print(type(age))
+Output
+20
+<class 'int'>
+Important methods
+Method	Use
+bit_length()	Returns number of bits needed
+to_bytes()	Converts integer to bytes
+Example
+x = 10
+
+print(x.bit_length())
+
+3. Float — float
+Definition
+
+float is used to store decimal numbers.
+
+Example
+price = 99.5
+
+print(price)
+print(type(price))
+Output
+99.5
+<class 'float'>
+Important methods
+Method	Use
+is_integer()	Checks whether float has no decimal part
+as_integer_ratio()	Returns numerator and denominator
+Example
+x = 10.0
+
+print(x.is_integer())
+
+Output:
+
+True
+
+4. Complex — complex
+Definition
+
+complex stores a number containing a real part and an imaginary part.
+
+Example
+x = 2 + 3j
+
+print(x)
+
+Output:
+
+(2+3j)
+Important attributes/method
+Attribute/Method	Use
+.real	Gets real part
+.imag	Gets imaginary part
+.conjugate()	Returns conjugate
+Example
+x = 2 + 3j
+
+print(x.real)
+print(x.imag)
+print(x.conjugate())
+
+Output:
+
+2.0
+3.0
+(2-3j)
+
+5. String — str
+Definition
+
+A string is a sequence of characters/text written inside quotes.
+
+Example
+name = "Aniket"
+
+print(name)
+print(type(name))
+Important string methods
+Method	Use
+upper()	Converts to uppercase
+lower()	Converts to lowercase
+capitalize()	First letter uppercase
+title()	First letter of each word uppercase
+replace()	Replaces text
+split()	Splits string
+strip()	Removes spaces from beginning/end
+startswith()	Checks starting text
+endswith()	Checks ending text
+count()	Counts occurrences
+find()	Finds position
+Example
+text = "hello world"
+
+print(text.upper())
+print(text.lower())
+print(text.title())
+print(text.replace("world", "Python"))
+Output
+HELLO WORLD
+hello world
+Hello World
+hello Python
+6. Boolean — bool
+Definition
+
+bool stores only two values:
+
+True
+False
+Example
+is_student = True
+
+print(is_student)
+print(type(is_student))
+Output
+True
+<class 'bool'>
+Important functions
+print(bool(1))
+print(bool(0))
+print(bool("hello"))
+print(bool(""))
+Output
+True
+False
+True
+False
+7. List — list
+Definition
+
+A list stores multiple values. It is ordered and changeable.
+
+Example
+numbers = [10, 20, 30]
+
+print(numbers)
+
+Output:
+
+[10, 20, 30]
+Important methods
+Method	Use
+append()	Adds item at the end
+insert()	Adds item at a specific position
+remove()	Removes a specific value
+pop()	Removes an item
+sort()	Sorts the list
+reverse()	Reverses the list
+clear()	Removes all items
+Example
+numbers = [30, 10, 20]
+
+numbers.append(40)
+numbers.sort()
+
+print(numbers)
+
+Output:
+
+[10, 20, 30, 40]
+8. Tuple — tuple
+Definition
+
+A tuple stores multiple values and is ordered but unchangeable.
+
+Example
+numbers = (10, 20, 30, 20)
+
+print(numbers)
+Important methods
+Method	Use
+count()	Counts a value
+index()	Finds the position of a value
+Example
+numbers = (10, 20, 30, 20)
+
+print(numbers.count(20))
+print(numbers.index(30))
+Output
+2
+2
+
+9. Set — set
+Definition
+
+A set stores unique values. Duplicate values are automatically removed.
+
+Example
+numbers = {10, 20, 30, 10}
+
+print(numbers)
+
+Output:
+
+{10, 20, 30}
+Important methods
+Method	Use
+add()	Adds an item
+remove()	Removes an item
+discard()	Removes an item if present
+clear()	Removes all items
+union()	Combines sets
+intersection()	Finds common values
+difference()	Finds values in first set but not second
+Example
+a = {1, 2, 3}
+b = {3, 4, 5}
+
+print(a.union(b))
+print(a.intersection(b))
+print(a.difference(b))
+
+Output:
+
+{1, 2, 3, 4, 5}
+{3}
+{1, 2}
+10. Frozenset — frozenset
+Definition
+
+A frozenset is an immutable (unchangeable) set.
+
+Example
+numbers = frozenset([1, 2, 3])
+
+print(numbers)
+
+Output:
+
+frozenset({1, 2, 3})
+Important methods
+Method	Use
+union()	Combines sets
+intersection()	Finds common values
+difference()	Finds different values
+Example
+a = frozenset([1, 2, 3])
+b = frozenset([3, 4, 5])
+
+print(a.union(b))
+print(a.intersection(b))
+Important
+
+You cannot use:
+
+a.add(4)
+
+❌ because a frozenset cannot be changed.
+
+11. Dictionary — dict
+Definition
+
+A dictionary stores data in key-value pairs.
+
+Example
+student = {
+    "name": "Aniket",
+    "age": 20
+}
+
+print(student)
+Important methods
+Method	Use
+keys()	Returns all keys
+values()	Returns all values
+items()	Returns key-value pairs
+get()	Gets a value
+update()	Updates/adds data
+pop()	Removes a key-value pair
+Example
+student = {
+    "name": "Aniket",
+    "age": 20
+}
+
+print(student.get("name"))
+
+Output:
+
+Aniket
+12. None — NoneType
+Definition
+
+None represents no value or absence of a value.
+
+Example
+x = None
+
+print(x)
+print(type(x))
+Output
+None
+<class 'NoneType'>
+13. Function
+Definition
+
+A function is a reusable block of code that performs a specific task.
+
+Example
+def add(a, b):
+    return a + b
+
+print(add(10, 20))
+Output
+30
+Important keywords
+def → creates a function
+return → returns a value
+Parameters → values received by function
+
+14. Module
+Definition
+
+A module is a single Python .py file containing reusable code.
+
+Example
+
+Suppose we have:
+
+calculator.py
+
+Inside:
+
+def add(a, b):
+    return a + b
+
+Use it in another file:
+
+import calculator
+
+print(calculator.add(2, 3))
+
+Output:
+
+5
+
+15. Package
+Definition
+
+A package is a folder containing related Python modules.
+
+Example
+my_package/
+    calculator.py
+    student.py
+
+Here:
+
+my_package → Package
+calculator.py → Module
+student.py → Module
+
+16. Library
+Definition
+
+A library is a collection of reusable code that helps us perform different tasks.
+
+Example
+
+Python's math module provides mathematical functionality:
+
+import math
+
+print(math.sqrt(25))
+
+Output:
+
+5.0
+
+Note: In Python terminology, "library," "package," and "module" are related but are not a strict hierarchy. For beginner understanding, think of a library as reusable code that may contain modules/packages.
+
+17. type()
+Definition
+
+type() tells us the data type of a value.
+
+Example
+x = 10
+
+print(type(x))
+
+Output:
+
+<class 'int'>
+18. enumerate()
+Definition
+
+enumerate() gives the index and value while looping through a sequence.
+
+Example
+names = ["Amit", "Rahul", "Sneha"]
+
+for index, name in enumerate(names):
+    print(index, name)
+Output
+0 Amit
+1 Rahul
+2 Sneha
+
+You can start the index from 1:
+
+for index, name in enumerate(names, start=1):
+    print(index, name)
+
+Output:
+
+1 Amit
+2 Rahul
+3 Sneha
+
+19. Hashable
+Definition
+
+A hashable object can be used as a dictionary key or set element.
+
+Examples
+x = 10
+name = "Aniket"
+
+student = {
+    name: 20
+}
+
+Here, "Aniket" is hashable, so it can be a dictionary key.
+
+Common hashable types:
+
+int
+float
+str
+bool
+tuple (if all its elements are hashable)
+frozenset
+
+20. Unhashable
+Definition
+
+An unhashable object cannot be used as a dictionary key or set element.
+
+Example
+numbers = [1, 2, 3]
+
+my_dict = {
+    numbers: "data"
+}
+
+This gives:
+
+TypeError: unhashable type: 'list'
+
+Common unhashable types:
+
+list
+dict
+set
+
+21. math Module
+Definition
+
+The math module provides mathematical functions and constants.
+
+Example
+import math
+
+print(math.sqrt(25))
+print(math.pi)
+
+Output:
+
+5.0
+3.141592653589793
+Important math functions
+Function	Use	Example
+sqrt()	Square root	math.sqrt(25)
+pow()	Power	math.pow(2, 3)
+factorial()	Factorial	math.factorial(5)
+ceil()	Round up	math.ceil(4.2)
+floor()	Round down	math.floor(4.8)
+log()	Logarithm	math.log(10)
+log10()	Base-10 logarithm	math.log10(100)
+Constants
+print(math.pi)
+print(math.e)
+⭐ Quick Revision Table
+Topic	Simple Definition
+int	Whole number
+float	Decimal number
+complex	Real + imaginary number
+str	Text
+bool	True or False
+list	Ordered and changeable collection
+tuple	Ordered and unchangeable collection
+set	Collection of unique values
+frozenset	Unchangeable set
+dict	Key-value pairs
+None	No value
+Function	Reusable block of code
+Module	Single .py file
+Package	Folder containing related modules
+Library	Collection of reusable code
+type()	Shows data type
+enumerate()	Gives index + value
+Hashable	Can be dictionary key/set element
+Unhashable	Cannot be dictionary key/set element
+math	Mathematical functions and constants
+⭐ Most Important Methods to Remember
+int        → bit_length(), to_bytes()
+
+float      → is_integer(), as_integer_ratio()
+
+complex    → real, imag, conjugate()
+
+str        → upper(), lower(), split(), replace(), strip()
+
+list       → append(), insert(), remove(), pop(), sort()
+
+tuple      → count(), index()
+
+set        → add(), remove(), union(), intersection(), difference()
+
+frozenset  → union(), intersection(), difference()
+
+dict       → keys(), values(), items(), get(), update(), pop()
+
+bool       → bool(), int()
+
+None       → type()
+🧠 Easy way to remember
+
+List changes → Tuple doesn't change → Set removes duplicates → Frozenset is fixed Set → Dictionary uses Key + Value.
